@@ -31,7 +31,7 @@ WORKDIR /home/nubit
 # Download and extract the binary archive
 RUN curl -sLO http://nubit.sh/nubit-bin/nubit-node-${ARCH_STRING}.tar && \
     tar -xvf nubit-node-${ARCH_STRING}.tar && \
-    mv nubit-node-${ARCH_STRING} nubit-light-node && \
+    mv nubit-node-${ARCH_STRING} "/home/nubit/nubit-light-node" && \
     rm nubit-node-${ARCH_STRING}.tar
 
 # Change to the binary directory
