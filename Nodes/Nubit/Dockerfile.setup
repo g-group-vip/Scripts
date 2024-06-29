@@ -28,11 +28,11 @@ WORKDIR /home/nubit_custom_user
 # Download and extract the binary archive
 RUN curl -sLO http://nubit.sh/nubit-bin/nubit-node-linux-x86_64.tar
 RUN tar -xvf nubit-node-linux-x86_64.tar
-RUN mv nubit-node-linux-x86_64 "/home/nubit_custom_user/nubit-light-node"
+RUN mv nubit-node-linux-x86_64 "/home/nubit_custom_user/nubit-node"
 RUN rm nubit-node-linux-x86_64.tar
 
 # Change to the binary directory
-WORKDIR /home/nubit_custom_user/nubit-light-node
+WORKDIR /home/nubit_custom_user/nubit-node
 
 # Download and set permissions for the start script
 RUN wget https://nubit.sh/start.sh
