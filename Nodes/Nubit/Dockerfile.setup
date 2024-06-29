@@ -19,7 +19,8 @@ RUN apt-get update -y && \
     apt-get install -y curl tar wget
 
 # Expose the necessary ports
-EXPOSE 26658 2121
+EXPOSE 26658 
+EXPOSE 2121
 
 # Switch to the newly created non-root user
 USER nubit_custom_user
