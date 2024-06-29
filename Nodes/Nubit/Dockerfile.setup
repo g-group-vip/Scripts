@@ -7,11 +7,12 @@ ARG ARCH_STRING="linux-x86_64"
 USER root
 
 # Create a non-root user and set up its home directory
-RUN groupadd -r nubit && \
-    useradd -r -g nubit -m -d /home/nubit nubit && \
-    chown -R nubit:nubit /home/nubit && \
-    chmod -R 700 /home/nubit && \
-    usermod -aG sudo nubit
+RUN groupadd -r nubit_custom_user && \
+    useradd -r -g nubit_custom_user nubit_custom_user && \
+    mkdir -p home/nubit_custom_user && \
+    chown -R nubit_custom_user:nubit_custom_user /home/nubit_custom_user && \
+    chmod -R 700 /home/nubit_custom_user && \
+    usermod -aG sudo nubit_custom_user
 
 # Install required packages
 RUN apt-get update -y && \
@@ -23,23 +24,23 @@ RUN apt-get update -y && \
 EXPOSE 26658 2121
 
 # Switch to the newly created non-root user
-USER nubit
+USER nubit_custom_user
 
 # Set the working directory
-WORKDIR /home/nubit
+WORKDIR /home/nubit_custom_user
 
 # Download and extract the binary archive
 RUN curl -sLO http://nubit.sh/nubit-bin/nubit-node-${ARCH_STRING}.tar && \
     tar -xvf nubit-node-${ARCH_STRING}.tar && \
-    mv nubit-node-${ARCH_STRING} "/home/nubit/nubit-light-node" && \
+    mv nubit-node-${ARCH_STRING} "/home/nubit_custom_user/nubit-light-node" && \
     rm nubit-node-${ARCH_STRING}.tar
 
 # Change to the binary directory
-WORKDIR /home/nubit/nubit-light-node
+WORKDIR /home/nubit_custom_user/nubit-light-node
 
 # Download and set permissions for the start script
-RUN wget https://nubit.sh/start.sh && \
-    chmod +x start.sh
+RUN wget https://nubit.sh/start.sh
+RUN chmod +x start.sh
 
 # Define the command to run when the container starts
 CMD ["./start.sh"]
