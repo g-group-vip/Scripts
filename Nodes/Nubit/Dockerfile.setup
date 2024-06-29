@@ -39,4 +39,4 @@ RUN wget https://nubit.sh/start.sh
 RUN chmod +x start.sh
 
 # Define the command to run when the container starts
-CMD ["./start.sh"]
+CMD ["./start.sh"] 
