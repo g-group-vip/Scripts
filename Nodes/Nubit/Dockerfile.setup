@@ -1,0 +1,45 @@
+FROM ubuntu:22.04
+
+# Set the architecture string as a build argument with a default value
+ARG ARCH_STRING="linux-x86_64"
+
+# Switch to the root user
+USER root
+
+# Create a non-root user and set up its home directory
+RUN groupadd -r nubit && \
+    useradd -r -g nubit -m -d /home/nubit nubit && \
+    chown -R nubit:nubit /home/nubit && \
+    chmod -R 700 /home/nubit && \
+    usermod -aG sudo nubit
+
+# Install required packages
+RUN apt-get update -y && \
+    apt-get install -y curl tar wget && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Expose the necessary ports
+EXPOSE 26658 2121
+
+# Switch to the newly created non-root user
+USER nubit
+
+# Set the working directory
+WORKDIR /home/nubit
+
+# Download and extract the binary archive
+RUN curl -sLO http://nubit.sh/nubit-bin/nubit-node-${ARCH_STRING}.tar && \
+    tar -xvf nubit-node-${ARCH_STRING}.tar && \
+    mv nubit-node-${ARCH_STRING} nubit-light-node && \
+    rm nubit-node-${ARCH_STRING}.tar
+
+# Change to the binary directory
+WORKDIR /home/nubit/nubit-light-node
+
+# Download and set permissions for the start script
+RUN wget https://nubit.sh/start.sh && \
+    chmod +x start.sh
+
+# Define the command to run when the container starts
+CMD ["./start.sh"]
