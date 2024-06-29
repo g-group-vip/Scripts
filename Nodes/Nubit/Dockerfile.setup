@@ -1,15 +1,12 @@
 FROM ubuntu:22.04
 
-# Set the architecture string as a build argument with a default value
-ARG ARCH_STRING="linux-x86_64"
-
 # Switch to the root user
 USER root
 
 # Create a non-root user and set up its home directory
 RUN groupadd -r nubit_custom_user && \
     useradd -r -g nubit_custom_user nubit_custom_user && \
-    mkdir -p home/nubit_custom_user && \
+    mkdir -p /home/nubit_custom_user && \
     chown -R nubit_custom_user:nubit_custom_user /home/nubit_custom_user && \
     chmod -R 700 /home/nubit_custom_user && \
     usermod -aG sudo nubit_custom_user
@@ -25,14 +22,14 @@ EXPOSE 2121
 # Switch to the newly created non-root user
 USER nubit_custom_user
 
-# Set the working directory
+# Change to the binary directory
 WORKDIR /home/nubit_custom_user
 
 # Download and extract the binary archive
-RUN curl -sLO http://nubit.sh/nubit-bin/nubit-node-${ARCH_STRING}.tar && \
-    tar -xvf nubit-node-${ARCH_STRING}.tar && \
-    mv nubit-node-${ARCH_STRING} "/home/nubit_custom_user/nubit-light-node" && \
-    rm nubit-node-${ARCH_STRING}.tar
+RUN curl -sLO http://nubit.sh/nubit-bin/nubit-node-linux-x86_64.tar
+RUN tar -xvf nubit-node-linux-x86_64.tar
+RUN mv nubit-node-linux-x86_64 "/home/nubit_custom_user/nubit-light-node"
+RUN rm nubit-node-linux-x86_64.tar
 
 # Change to the binary directory
 WORKDIR /home/nubit_custom_user/nubit-light-node
