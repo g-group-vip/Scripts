@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Update and upgrade the package list
-sudo apt update && sudo apt upgrade -y
+sudo apt-get update && sudo apt-get upgrade -y
 
 # Install necessary utilities and development tools
-sudo apt install -y \
+sudo apt-get install -y \
     curl \
     htop \
     mc \

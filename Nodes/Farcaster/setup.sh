@@ -8,8 +8,8 @@ echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 echo "Installing of the required software!"
 echo "Встановлення необхідного програмного забезпечення!"
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-curl -s https://raw.githubusercontent.com/g-group-vip/Scripts/main/Nodes/General/tools_install.sh | bash >/dev/null
-curl -s https://raw.githubusercontent.com/g-group-vip/Scripts/main/Nodes/General/docker_install.sh | bash >/dev/null
+curl -s https://raw.githubusercontent.com/g-group-vip/Scripts/main/Nodes/General/tools_install.sh | bash &>/dev/null
+curl -s https://raw.githubusercontent.com/g-group-vip/Scripts/main/Nodes/General/docker_install.sh | bash &>/dev/null
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "Installing of the Farcaster node!"
 echo "Встановлення ноди Farcaster!"
