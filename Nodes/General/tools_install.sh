@@ -1,8 +1,10 @@
 #!/bin/bash
 
-# Update the package list and install necessary utilities and development tools
-# Оновлення списку пакетів та встановлення необхідних утиліт та інструментів розробки
-sudo apt update && sudo apt install -y \
+# Update the package list
+sudo apt update
+
+# Install necessary utilities and development tools
+sudo apt install -y \
     curl \
     htop \
     mc \
@@ -10,7 +12,16 @@ sudo apt update && sudo apt install -y \
     make \
     cmake \
     unzip \
-    jq
+    jq \
+    git \
+    tmux \
+    net-tools \
+    build-essential \
+    ncdu \
+    netcat \
+    clang \
+    pkg-config \
+    libssl-dev
 
 # curl: Tool to transfer data from URLs
 # curl: Інструмент для передачі даних за URL
@@ -35,3 +46,30 @@ sudo apt update && sudo apt install -y \
 
 # jq: Tool for processing JSON data
 # jq: Інструмент для обробки даних JSON
+
+# git: Version control system
+# git: Система контролю версій
+
+# tmux: Terminal multiplexer
+# tmux: Термінальний мультиплексор
+
+# net-tools: Network configuration tools
+# net-tools: Інструменти для конфігурації мережі
+
+# build-essential: Basic development tools
+# build-essential: Основні інструменти для розробки
+
+# ncdu: Disk usage analyzer
+# ncdu: Аналізатор використання диска
+
+# netcat: Networking utility for reading/writing network connections
+# netcat: Утиліта для роботи з мережевими з'єднаннями
+
+# clang: C, C++, and Objective-C compiler
+# clang: Компілятор для мов C, C++ та Objective-C
+
+# pkg-config: Tool to manage compile and link flags for libraries
+# pkg-config: Інструмент для керування прапорами компіляції та зв'язування для бібліотек
+
+# libssl-dev: Development files for OpenSSL
+# libssl-dev: Файли для розробки OpenSSL
