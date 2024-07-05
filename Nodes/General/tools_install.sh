@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Update the package list
-sudo apt update
+# Update and upgrade the package list
+sudo apt update && sudo apt upgrade -y
 
 # Install necessary utilities and development tools
 sudo apt install -y \
@@ -18,10 +18,10 @@ sudo apt install -y \
     net-tools \
     build-essential \
     ncdu \
-    netcat \
+    netcat-openbsd \
     clang \
     pkg-config \
-    libssl-dev
+    libssl-dev 
 
 # curl: Tool to transfer data from URLs
 # curl: Інструмент для передачі даних за URL
@@ -62,8 +62,8 @@ sudo apt install -y \
 # ncdu: Disk usage analyzer
 # ncdu: Аналізатор використання диска
 
-# netcat: Networking utility for reading/writing network connections
-# netcat: Утиліта для роботи з мережевими з'єднаннями
+# netcat-openbsd: Networking utility for reading/writing network connections
+# netcat-openbsd: Утиліта для роботи з мережевими з'єднаннями
 
 # clang: C, C++, and Objective-C compiler
 # clang: Компілятор для мов C, C++ та Objective-C
