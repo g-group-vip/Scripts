@@ -1,0 +1,4 @@
+1. bash <(curl -s https://raw.githubusercontent.com/g-group-vip/Scripts/main/Nodes/Nesa/setup.sh)
+2. docker logs -f --tail 250 orchestrator 
+3. cat $HOME/.nesa/identity/node_id.id
+4. https://node.nesa.ai/

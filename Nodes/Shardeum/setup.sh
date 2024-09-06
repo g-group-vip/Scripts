@@ -23,7 +23,7 @@ echo "Congratulations,that is it! The Shardeum node is launched and runnning suc
 echo "Please monitor it's state by this link:"
 echo "Вітаємо,на цьому все!Shardeum нода успішно запущена та працює!"
 echo "Будь ласка стежте за станом вашої ноди за цим посиланням:"
-echo "http://$(hostname -I | awk '{print $1}'):8180"
+echo "https://$(hostname -I | awk '{print $1}'):8180"
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "As well you can check the actual logs with help of next command:"
 echo "Також актуальні логи можна перевірити наступною командою:"

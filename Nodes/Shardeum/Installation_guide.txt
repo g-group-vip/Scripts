@@ -1,0 +1,2 @@
+1. bash <(curl -s https://raw.githubusercontent.com/g-group-vip/Scripts/main/Nodes/Shardeum/setup.sh)
+2. docker logs -f --tail=250 shardeum-dashboard
