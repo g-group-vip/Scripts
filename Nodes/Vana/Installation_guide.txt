@@ -1,0 +1,2 @@
+1. bash <(curl -s https://raw.githubusercontent.com/g-group-vip/Scripts/refs/heads/main/Nodes/Vana/setup_dependencies.sh)
+2. sudo journalctl -u vana.service -f
