@@ -22,26 +22,42 @@ sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
 sudo apt install python3.11 -y
 
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "Version:"
 python3.11 --version
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+
 
 sudo apt install python3-pip python3-venv curl -y
 curl -sSL https://install.python-poetry.org | python3 -
 export PATH="$HOME/.local/bin:$PATH"
 source ~/.bashrc
 
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "Version:"
 poetry --version
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+
 
 curl -fsSL https://fnm.vercel.app/install | bash
 
 source ~/.bashrc
 fnm use --install-if-missing 22
 
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "Version:"
 node -v && npm -v
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+
 
 apt-get install nodejs -y
 npm install -g yarn
 
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "Version:"
 yarn --version
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+
 
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "Installing of the required software completed!"
@@ -51,26 +67,35 @@ echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 echo "Installed versions:"
 echo "Встановлені версії:"
 
+echo ""
 echo "Python: - Expected to see Python 3.11.10 version"
 echo "Python: - очікується версія Python 3.11.10"
+echo ""
 
 python3.11 --version
 
-echo "Poetry: - Expected to see any version"
-echo "Poetry: - Очікується будь-яка версія"
+echo ""
+echo "Poetry: - Expected to see any versio:"
+echo "Poetry: - Очікується будь-яка версія:"
+echo ""
 
 poetry --version
 
-echo "NodeJs and Npm:  - Expected versions: v22.9.0 and 10.8.3"
-echo "NodeJs і Npm: - Очікувані версії: v22.9.0 і 10.8.3"
+echo ""
+echo "NodeJs and Npm:  - Expected versions: v22.9.0 and 10.8.3 :"
+echo "NodeJs і Npm: - Очікувані версії: v22.9.0 і 10.8.3 :"
+echo ""
 
 node -v && npm -v
 
-echo "Yarn: - Expected to see any version"
-echo "Yarn: - Очікується будь-яка версія"
+echo ""
+echo "Yarn: - Expected to see any version:"
+echo "Yarn: - Очікується будь-яка версія:"
+echo ""
 
 yarn --version
 
+echo ""
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo ""
 
@@ -79,7 +104,7 @@ echo "Якщо пізніше у вас виникнуть проблеми з P
 
 echo "sudo apt install python3-pip python3-venv curl -y"
 echo "curl -sSL https://install.python-poetry.org | python3 -"
-echo "export PATH="$HOME/.local/bin:$PATH""
+echo "export PATH=\"\$HOME/.local/bin:\$PATH\""
 echo "source ~/.bashrc"
 echo "poetry --version"
 
