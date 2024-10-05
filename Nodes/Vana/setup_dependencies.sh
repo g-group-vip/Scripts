@@ -41,8 +41,7 @@ echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 curl -fsSL https://fnm.vercel.app/install | bash
 sleep 5
-source ~/.bashrc
-source ~/.profile  # Ensure all environment variables are sourced
+source /root/.bashrc
 sleep 5
 command -v fnm >/dev/null 2>&1 || { echo "FNM installation failed" >&2; exit 1; }  # Check fnm installed
 fnm use --install-if-missing 22
